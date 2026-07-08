@@ -1,1 +1,167 @@
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#050505;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* Background */
+
+.background{
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at top,#17304d 0%,#050505 55%),
+    #050505;
+    z-index:-2;
+}
+
+.overlay{
+    position:fixed;
+    inset:0;
+    background:linear-gradient(
+        to bottom,
+        rgba(0,0,0,.25),
+        rgba(0,0,0,.65)
+    );
+    z-index:-1;
+}
+
+/* Hero */
+
+.hero{
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:20px;
+    position:relative;
+}
+
+.hero-content{
+    max-width:850px;
+}
+
+.studio{
+    display:inline-block;
+    letter-spacing:6px;
+    color:#9db7d5;
+    font-size:14px;
+    margin-bottom:18px;
+}
+
+.hero h1{
+    font-family:"Cinzel",serif;
+    font-size:72px;
+    font-weight:700;
+    margin-bottom:15px;
+}
+
+.hero h2{
+    font-size:26px;
+    color:#d7d7d7;
+    font-weight:300;
+    margin-bottom:25px;
+}
+
+.hero p{
+    font-size:18px;
+    color:#9c9c9c;
+    line-height:1.8;
+    margin-bottom:45px;
+}
+
+/* Button */
+
+.btn{
+    display:inline-block;
+    padding:18px 42px;
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:60px;
+    text-decoration:none;
+    color:#fff;
+    transition:.35s;
+    backdrop-filter:blur(15px);
+}
+
+.btn:hover{
+    background:#ffffff;
+    color:#000;
+    transform:translateY(-4px);
+}
+
+/* Scroll */
+
+.scroll{
+    position:absolute;
+    bottom:35px;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:14px;
+    letter-spacing:3px;
+    color:#9d9d9d;
+}
+
+/* Story */
+
+#story{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:120px 20px;
+}
+
+.container{
+    width:100%;
+    max-width:1000px;
+}
+
+.section-tag{
+    color:#7da7d8;
+    letter-spacing:4px;
+    font-size:14px;
+}
+
+#story h2{
+    font-family:"Cinzel",serif;
+    font-size:56px;
+    margin:25px 0;
+}
+
+#story p{
+    font-size:20px;
+    color:#b6b6b6;
+    line-height:1.9;
+    max-width:750px;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:48px;
+}
+
+.hero h2{
+    font-size:20px;
+}
+
+#story h2{
+    font-size:38px;
+}
+
+}
