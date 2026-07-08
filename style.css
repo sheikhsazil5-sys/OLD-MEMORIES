@@ -165,3 +165,146 @@ body{
 }
 
 }
+/* Moon */
+
+.moon{
+
+position:absolute;
+
+width:220px;
+height:220px;
+
+border-radius:50%;
+
+top:80px;
+right:120px;
+
+background:
+radial-gradient(circle,#ffffff,#d9ecff 60%,#99b9d8);
+
+box-shadow:
+0 0 50px rgba(180,220,255,.45),
+0 0 120px rgba(180,220,255,.15);
+
+z-index:-1;
+
+animation:moonFloat 8s ease-in-out infinite;
+
+}
+
+@keyframes moonFloat{
+
+0%,100%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-15px);
+
+}
+
+}
+
+/* Stars */
+
+.stars{
+
+position:fixed;
+
+inset:0;
+
+pointer-events:none;
+
+}
+
+.stars span{
+
+position:absolute;
+
+width:2px;
+height:2px;
+
+background:white;
+
+border-radius:50%;
+
+animation:twinkle 2s infinite alternate;
+
+}
+
+.stars span:nth-child(1){
+
+top:15%;
+left:20%;
+
+}
+
+.stars span:nth-child(2){
+
+top:22%;
+left:70%;
+
+}
+
+.stars span:nth-child(3){
+
+top:10%;
+left:55%;
+
+}
+
+.stars span:nth-child(4){
+
+top:35%;
+left:82%;
+
+}
+
+.stars span:nth-child(5){
+
+top:28%;
+left:10%;
+
+}
+
+.stars span:nth-child(6){
+
+top:8%;
+left:90%;
+
+}
+
+.stars span:nth-child(7){
+
+top:40%;
+left:30%;
+
+}
+
+.stars span:nth-child(8){
+
+top:18%;
+left:45%;
+
+}
+
+@keyframes twinkle{
+
+from{
+
+opacity:.25;
+
+}
+
+to{
+
+opacity:1;
+
+transform:scale(2);
+
+}
+
+}
