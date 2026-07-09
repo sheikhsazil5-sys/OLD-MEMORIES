@@ -157,13 +157,11 @@ transform:scale(1.15) !important;
     color:white;
 
 }
-/* ===========================
-   Mobile Responsive
-=========================== */
+/* Desktop CSS */
 
+/* ---------- Mobile ---------- */
 @media (max-width: 768px) {
-
-    #introText {
+introText {
         font-size: 48px;
         letter-spacing: 3px;
         padding: 0 20px;
@@ -198,3 +196,23 @@ transform:scale(1.15) !important;
     }
 
 }
+
+
+/* ---------- Small Mobile ---------- */
+@media (max-width: 400px) {
+    #introText {
+        font-size: 36px;
+    }
+
+    .hero-content h1 {
+        font-size: 34px;
+    }
+
+    .hero-content h2 {
+        font-size: 16px;
+    }
+
+}
+
+
+    #
