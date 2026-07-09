@@ -1,6 +1,6 @@
-// ==========================
+// ============================
 // Rain Engine
-// ==========================
+// ============================
 
 const rain = document.getElementById("rain");
 
@@ -8,7 +8,7 @@ for (let i = 0; i < 180; i++) {
 
     const drop = document.createElement("div");
 
-    drop.classList.add("drop");
+    drop.className = "drop";
 
     drop.style.left = Math.random() * 100 + "vw";
 
@@ -24,6 +24,11 @@ for (let i = 0; i < 180; i++) {
     rain.appendChild(drop);
 
 }
+
+// ============================
+// Intro Story
+// ============================
+
 const intro = document.getElementById("intro");
 const introText = document.getElementById("introText");
 const hero = document.getElementById("hero");
@@ -31,34 +36,40 @@ const hero = document.getElementById("hero");
 hero.style.display = "none";
 
 const scenes = [
+
     "2018",
+
     "The Year<br>Everything Changed...",
+
     "Do You Remember<br>Your First Drop?"
+
 ];
 
-let index = 0;
+let currentScene = 0;
 
-function showScene() {
+function playScene() {
 
-    introText.innerHTML = scenes[index];
+    introText.innerHTML = scenes[currentScene];
 
     introText.classList.remove("hide");
+
     introText.classList.add("show");
 
     setTimeout(() => {
 
         introText.classList.remove("show");
+
         introText.classList.add("hide");
 
         setTimeout(() => {
 
-            index++;
+            currentScene++;
 
-            if(index < scenes.length){
+            if (currentScene < scenes.length) {
 
-                showScene();
+                playScene();
 
-            }else{
+            } else {
 
                 intro.style.opacity = "0";
 
@@ -69,21 +80,31 @@ function showScene() {
                     hero.style.display = "flex";
 
                     hero.animate(
+
                         [
+
                             {
                                 opacity:0,
-                                transform:"translateY(50px)"
+                                transform:"translateY(60px)"
                             },
+
                             {
                                 opacity:1,
-                                transform:"translateY(0)"
+                                transform:"translateY(0px)"
                             }
+
                         ],
+
                         {
+
                             duration:1800,
-                            fill:"forwards",
-                            easing:"ease-out"
+
+                            easing:"ease-out",
+
+                            fill:"forwards"
+
                         }
+
                     );
 
                 },1500);
@@ -96,4 +117,22 @@ function showScene() {
 
 }
 
-showScene();
+playScene();
+
+// ============================
+// Button
+// ============================
+
+const startBtn = document.getElementById("startBtn");
+
+startBtn.addEventListener("mouseenter", () => {
+
+    startBtn.style.transform = "scale(1.05)";
+
+});
+
+startBtn.addEventListener("mouseleave", () => {
+
+    startBtn.style.transform = "scale(1)";
+
+});
