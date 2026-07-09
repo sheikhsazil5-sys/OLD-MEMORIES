@@ -1,17 +1,3 @@
-const intro = document.getElementById("intro");
-const introText = document.getElementById("introText");
-const hero = document.getElementById("hero");
-
-hero.style.display = "none";
-
-const scenes = [
-    "2018",
-    "The Year<br>Everything Changed...",
-    "Do You Remember<br>Your First Drop?"
-];
-
-let index = 0;
-
 // ==========================
 // Rain Engine
 // ==========================
@@ -38,6 +24,19 @@ for (let i = 0; i < 180; i++) {
     rain.appendChild(drop);
 
 }
+const intro = document.getElementById("intro");
+const introText = document.getElementById("introText");
+const hero = document.getElementById("hero");
+
+hero.style.display = "none";
+
+const scenes = [
+    "2018",
+    "The Year<br>Everything Changed...",
+    "Do You Remember<br>Your First Drop?"
+];
+
+let index = 0;
 
 function showScene() {
 
