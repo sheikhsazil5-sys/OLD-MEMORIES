@@ -2,57 +2,72 @@ const intro = document.getElementById("intro");
 const introText = document.getElementById("introText");
 const hero = document.getElementById("hero");
 
-// Hero hide
-hero.style.opacity = "0";
+hero.style.display = "none";
 
 const scenes = [
-
     "2018",
-
-    "The year\nEverything Changed...",
-
-    "Do you remember\nYour First Drop?"
-
+    "The Year<br>Everything Changed...",
+    "Do You Remember<br>Your First Drop?"
 ];
 
-let current = 0;
+let index = 0;
 
-function nextScene() {
+function showScene() {
 
-    introText.style.opacity = "0";
+    introText.innerHTML = scenes[index];
+
+    introText.classList.remove("hide");
+    introText.classList.add("show");
 
     setTimeout(() => {
 
-        current++;
+        introText.classList.remove("show");
+        introText.classList.add("hide");
 
-        if (current >= scenes.length) {
+        setTimeout(() => {
 
-            intro.style.opacity = "0";
+            index++;
 
-            setTimeout(() => {
+            if(index < scenes.length){
 
-                intro.style.display = "none";
+                showScene();
 
-                hero.style.transition = "2s";
+            }else{
 
-                hero.style.opacity = "1";
+                intro.style.opacity = "0";
 
-            },1000);
+                setTimeout(() => {
 
-            return;
+                    intro.style.display = "none";
 
-        }
+                    hero.style.display = "flex";
 
-        introText.innerHTML = scenes[current].replace(/\n/g,"<br>");
+                    hero.animate(
+                        [
+                            {
+                                opacity:0,
+                                transform:"translateY(50px)"
+                            },
+                            {
+                                opacity:1,
+                                transform:"translateY(0)"
+                            }
+                        ],
+                        {
+                            duration:1800,
+                            fill:"forwards",
+                            easing:"ease-out"
+                        }
+                    );
 
-        introText.style.opacity = "1";
+                },1500);
 
-    },1000);
+            }
+
+        },1000);
+
+    },2000);
 
 }
 
-setTimeout(nextScene,2500);
-
-setTimeout(nextScene,5500);
-
-setTimeout(nextScene,9000);
+showScene();
