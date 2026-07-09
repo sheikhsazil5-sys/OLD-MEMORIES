@@ -12,6 +12,33 @@ const scenes = [
 
 let index = 0;
 
+// ==========================
+// Rain Engine
+// ==========================
+
+const rain = document.getElementById("rain");
+
+for (let i = 0; i < 180; i++) {
+
+    const drop = document.createElement("div");
+
+    drop.classList.add("drop");
+
+    drop.style.left = Math.random() * 100 + "vw";
+
+    drop.style.animationDuration =
+        (0.5 + Math.random() * 0.8) + "s";
+
+    drop.style.animationDelay =
+        Math.random() * 2 + "s";
+
+    drop.style.opacity =
+        0.2 + Math.random() * 0.6;
+
+    rain.appendChild(drop);
+
+}
+
 function showScene() {
 
     introText.innerHTML = scenes[index];
