@@ -140,7 +140,7 @@ transform:scale(1.15) !important;
 
 /* ---------- Mobile ---------- */
 @media (max-width: 768px) {
-#introText {
+introText {
         font-size: 48px;
         letter-spacing: 3px;
         padding: 0 20px;
